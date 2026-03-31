@@ -1,5 +1,5 @@
 class Solution:
-    def construct(self, str1: str, str2: str) -> str:
+    def generateString(self, str1: str, str2: str) -> str:
         n = len(str1)
         m = len(str2)
         ans = ['?'] * (n + m - 1)
