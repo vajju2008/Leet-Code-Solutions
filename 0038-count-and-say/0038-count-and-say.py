@@ -1,23 +1,26 @@
-def countAndSay(n: int) -> str:
-    # Base case
-    if n == 1:
-        return "1"
-    
-    # Recursive call: get the previous term
-    prev = countAndSay(n - 1)
-    
-    result = []
-    i = 0
-    
-    # Process the previous term using run-length encoding
-    while i < len(prev):
-        count = 1
-        # Count consecutive identical digits
-        while i + 1 < len(prev) and prev[i] == prev[i + 1]:
-            count += 1
-            i += 1
-        # Append "count + digit" to result
-        result.append(str(count) + prev[i])
-        i += 1
-    
-    return "".join(result)
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+        
+        current_str = "1"
+        
+        for _ in range(n - 1):
+            next_str = []
+            i = 0
+            
+            while i < len(current_str):
+                count = 1
+                # Count consecutive identical characters
+                while i + 1 < len(current_str) and current_str[i] == current_str[i+1]:
+                    count += 1
+                    i += 1
+                
+                # Append the count followed by the digit
+                next_str.append(str(count))
+                next_str.append(current_str[i])
+                i += 1
+            
+            current_str = "".join(next_str)
+            
+        return current_str
