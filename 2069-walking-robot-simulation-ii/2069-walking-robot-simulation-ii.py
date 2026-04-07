@@ -31,3 +31,14 @@ class Robot:
             return "West"
         else:
             return "South"
+
+
+
+
+
+
+
+
+
+
+            # elif self.pos < 2 * self.w + self.h - 3:  # Fails when pos hits the exact corner
