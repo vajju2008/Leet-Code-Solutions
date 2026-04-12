@@ -15,11 +15,8 @@ class Solution:
             new_dp = {}
 
             for other, cost in dp.items():
-                # Option 1: Move the 'prev' finger to 'c'. The 'other' finger stays put.
                 cost1 = cost + get_dist(prev, c)
                 new_dp[other] = min(new_dp.get(other, float('inf')), cost1)
-
-                # Option 2: Move the 'other' finger to 'c'. 'prev' becomes the new 'other' finger.
                 cost2 = cost + get_dist(other, c)
                 new_dp[prev] = min(new_dp.get(prev, float('inf')), cost2)
 
