@@ -1,5 +1,5 @@
 class Solution:
-    def maximizeMinimumDistance(self, side: int, points: List[List[int]], k: int) -> int:
+    def maxDistance(self, side: int, points: List[List[int]], k: int) -> int:
         
         def get_1d_distance(x, y, s):
             if y == 0:
